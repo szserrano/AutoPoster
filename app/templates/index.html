@@ -1,9 +1,9 @@
-<!doctype html>
-<html>
-    <head>
-        <title>{{ title }} - AutoPoster</title>
-    </head>
-    <body>
-        <h1>Hello, {{ user.username }}!</h1>
-    </body>
-</html>
+<!-- This is inherited rendering of /index url from base.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hello, {{ user.username }}!</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}

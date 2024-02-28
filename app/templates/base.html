@@ -1,0 +1,17 @@
+<!-- This is a template inherited by url html files for their own rendering -->
+<!doctype html>
+<html>
+    <head>
+        <!-- These conditional statements used by Jinja for rendering based off of existence of title field -->
+        {% if title %}
+        <title>{{ title }} - AutoPoster</title>
+        {% else %}
+        <title>Welcome to AutoPoster</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>AutoPoster: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
