@@ -9,12 +9,17 @@
         <title>Welcome to AutoPoster</title>
         {% endif %}
     </head>
+    <!-- 
+        url_for('index'/'login'): used to generate the application URLs mapped to the view functions defined in routes.py module. 
+            This prevents tedious refactoring of directly written urls throughout code and long URLs with dynamic components concatenated within them. 
+    -->
     <body>
         <div>AutoPoster: 
             <a href="{{ url_for('index') }}">Home</a>
             <a href="{{ url_for('login') }}">Login</a>
         </div>
         <hr>
+        <!-- with construct grabs content from Flask function get_flashed_messages() and assigns them to messages. We then loop through messages and display in listed form -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>

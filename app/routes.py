@@ -20,6 +20,14 @@ def index():
     ]
     return render_template('index.html', title='Home', user=user, posts=posts)
 
+# /login URL
+#   * Initialize form to be instance from LoginForm() defined in apps.form.py module we created
+#   * Passing newly instantiated form object to final return with the name 'form' gives template the object to work with during render
+#   * form.validate_on_submit(): does form processing work. If the browser sends the GET request to receive web page w the form, 
+#       this returns False (The Sign In form should send a POST request). When it sends false, we would see the Sign In form page again.
+#   * flash function allows for receiving form data. Seeing how methods for the /login route are 'GET' and 'POST', the app must be able to receive form data.
+#       The message in the flash() function is outputted when we are redirected to the url after the flash function. The .format() within the flash function
+#       formats the arguments within the message respectively at the {}'s. You'd be able to see this message in the app/templates/base.html
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
