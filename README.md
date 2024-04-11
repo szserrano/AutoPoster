@@ -27,3 +27,13 @@ form template arguments:
 form validation:
 
 - {% for error in form.username/password.errors %}: We iterate through errors seen by Flask and placed into .errors dictionary field and display them in red.
+
+Error Handling for AutoPoster:
+
+- Before running the instance, you must run these exports:
+  $ export MAIL_SERVER=smtp.sendgrid.net
+  $ export MAIL_PORT=587
+  $ export MAIL_USE_TLS=1
+  $ export MAIL_USERNAME=apikey
+  $ export MAIL_PASSWORD=<SENDGRID_API_KEY>
+  $ export MAIL_DEFAULT_SENDER=<VERIFIED_SENDGRID_EMAIL>
